@@ -1,0 +1,94 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p *ngIf="!lodz"><em>Loading...</em></p>
+<p *ngIf="days" style="font-weight: bold">Days in the database: {{ days }}</p>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="lodz && warsaw && szczecin && wroclaw && gdansk && krakow && suwalki && rzeszow && poland">
+  <thead>
+    <tr>
+      <th style="background-color: dimgray; color: white; font-weight: bold;"></th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Warszawa</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Lodz</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Szczecin</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Wroclaw</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Gdansk</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Krakow</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Suwalki</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Rzeszow</th>
+      <th style="background-color: dimgray; color: white; font-weight: bold;">Poland</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="background-color: dimgray; color: white; font-weight: bold;">Temperature</td>
+      <td>{{ warsaw[0].temp }}</td>
+      <td>{{ lodz[0].temp }}</td>
+      <td>{{ szczecin[0].temp }}</td>
+      <td>{{ wroclaw[0].temp }}</td>
+      <td>{{ gdansk[0].temp }}</td>
+      <td>{{ krakow[0].temp }}</td>
+      <td>{{ suwalki[0].temp }}</td>
+      <td>{{ rzeszow[0].temp }}</td>
+      <td>{{ poland[0].temp }}</td>
+    </tr>
+    <tr>
+      <td style="background-color: dimgray; color: white; font-weight: bold;">Pressure</td>
+      <td>{{ warsaw[0].pressure }}</td>
+      <td>{{ lodz[0].pressure }}</td>
+      <td>{{ szczecin[0].pressure }}</td>
+      <td>{{ wroclaw[0].pressure }}</td>
+      <td>{{ gdansk[0].pressure }}</td>
+      <td>{{ krakow[0].pressure }}</td>
+      <td>{{ suwalki[0].pressure }}</td>
+      <td>{{ rzeszow[0].pressure }}</td>
+      <td>{{ poland[0].pressure }}</td>
+    </tr>
+    <tr>
+      <td style="background-color: dimgray; color: white; font-weight: bold;">Humidity</td>
+      <td>{{ warsaw[0].humidity }}</td>
+      <td>{{ lodz[0].humidity }}</td>
+      <td>{{ szczecin[0].humidity }}</td>
+      <td>{{ wroclaw[0].humidity }}</td>
+      <td>{{ gdansk[0].humidity }}</td>
+      <td>{{ krakow[0].humidity }}</td>
+      <td>{{ suwalki[0].humidity }}</td>
+      <td>{{ rzeszow[0].humidity }}</td>
+      <td>{{ poland[0].humidity }}</td>
+    </tr>
+    <tr>
+      <td style="background-color: dimgray; color: white; font-weight: bold;">Precipitation</td>
+      <td>{{ warsaw[0].precipitation }}</td>
+      <td>{{ lodz[0].precipitation }}</td>
+      <td>{{ szczecin[0].precipitation }}</td>
+      <td>{{ wroclaw[0].precipitation }}</td>
+      <td>{{ gdansk[0].precipitation }}</td>
+      <td>{{ krakow[0].precipitation }}</td>
+      <td>{{ suwalki[0].precipitation }}</td>
+      <td>{{ rzeszow[0].precipitation }}</td>
+      <td>{{ poland[0].precipitation }}</td>
+    </tr>
+    <tr>
+      <td style="background-color: dimgray; color: white; font-weight: bold;">Wind Speed</td>
+      <td>{{ warsaw[0].wind_speed }}</td>
+      <td>{{ lodz[0].wind_speed }}</td>
+      <td>{{ szczecin[0].wind_speed }}</td>
+      <td>{{ wroclaw[0].wind_speed }}</td>
+      <td>{{ gdansk[0].wind_speed }}</td>
+      <td>{{ krakow[0].wind_speed }}</td>
+      <td>{{ suwalki[0].wind_speed }}</td>
+      <td>{{ rzeszow[0].wind_speed }}</td>
+      <td>{{ poland[0].wind_speed }}</td>
+    </tr>
+    <tr>
+      <td style="background-color: dimgray; color: white; font-weight: bold;">Wind Direction</td>
+      <td>{{ warsaw[0].wind_direction }}</td>
+      <td>{{ lodz[0].wind_direction }}</td>
+      <td>{{ szczecin[0].wind_direction }}</td>
+      <td>{{ wroclaw[0].wind_direction }}</td>
+      <td>{{ gdansk[0].wind_direction }}</td>
+      <td>{{ krakow[0].wind_direction }}</td>
+      <td>{{ suwalki[0].wind_direction }}</td>
+      <td>{{ rzeszow[0].wind_direction }}</td>
+      <td>{{ poland[0].wind_direction }}</td>
+    </tr>
+  </tbody>
+</table>
