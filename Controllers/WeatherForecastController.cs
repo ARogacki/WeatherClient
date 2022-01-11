@@ -17,6 +17,7 @@ namespace WeatherClient.Controllers
     {
         private readonly ILogger<WeatherForecastController> _logger;
         private string ApiKey = "";
+        string port = "5432";
 
 
         public void GenerateKey()
@@ -94,7 +95,7 @@ namespace WeatherClient.Controllers
         {
             try
             {
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port="+port+";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT AVG(\"Temperature\") as Temperature, AVG(\"Pressure\") as Pressure, AVG(\"Humidity\") as Humidity, AVG(\"Precipitation\") as Precipitation, AVG(\"Wind_speed\") as Wind_speed, AVG(\"Wind_direction\") as Wind_direction FROM public.\"" + city + "\"", con);
@@ -113,7 +114,7 @@ namespace WeatherClient.Controllers
         {
             try
             {
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT AVG(\"Temperature\") as Temperature, AVG(\"Pressure\") as Pressure, AVG(\"Humidity\") as Humidity, AVG(\"Precipitation\") as Precipitation, AVG(\"Wind_speed\") as Wind_speed, AVG(\"Wind_direction\") as Wind_direction " +
@@ -142,7 +143,7 @@ namespace WeatherClient.Controllers
         {
             try
             {
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT * FROM public.\"" + city + "\"", con);
@@ -161,7 +162,7 @@ namespace WeatherClient.Controllers
         {
             try
             {
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT \"Date\", AVG(\"Temperature\") as Temperature, AVG(\"Pressure\") as Pressure, AVG(\"Humidity\") as Humidity, AVG(\"Precipitation\") as Precipitation, AVG(\"Wind_speed\") as Wind_speed, AVG(\"Wind_direction\") as Wind_direction " +
@@ -204,7 +205,7 @@ namespace WeatherClient.Controllers
                         p = "AVG(\"Wind_direction\") as Wind_direction ";
                         break;
                 }
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT \"Date\", " + p +
@@ -226,7 +227,7 @@ namespace WeatherClient.Controllers
         {
             try
             {
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT \"Date\", AVG(\"Temperature\") as Temperature, AVG(\"Pressure\") as Pressure, AVG(\"Humidity\") as Humidity, AVG(\"Precipitation\") as Precipitation, AVG(\"Wind_speed\") as Wind_speed, AVG(\"Wind_direction\") as Wind_direction " +
@@ -278,7 +279,7 @@ namespace WeatherClient.Controllers
                         p = "AVG(\"Wind_direction\") as Wind_direction ";
                         break;
                 }
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT \"Date\", " + p +
@@ -379,7 +380,7 @@ namespace WeatherClient.Controllers
         {
             try
             {
-                var cs = "Server=127.0.0.1;Port=5433;User Id=postgres;Password=postgres;Database=WeatherForecast";
+                var cs = "Server=127.0.0.1;Port=" + port + ";User Id=postgres;Password=postgres;Database=WeatherForecast";
                 var con = new NpgsqlConnection(cs);
                 con.Open();
                 var cmd = new NpgsqlCommand("SELECT COUNT(ids) as amount FROM (SELECT COUNT(\"ID\") as ids FROM public.\"Lodz\" GROUP BY \"Date\") as subquery", con);
